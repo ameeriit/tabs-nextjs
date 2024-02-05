@@ -34,8 +34,8 @@ const Tabs: React.FC<TabsProps> = ({ tabsData }) => {
 
   return (
     <>
-      <div>
-        <div>
+      <div className="overflow-x-auto w-full">
+        <div className="flex flex-nowrap gap-3 mb-12 w-full">
           {tabsData.map((tab, index) => (
             <Tab
               key={index}
@@ -52,17 +52,21 @@ const Tabs: React.FC<TabsProps> = ({ tabsData }) => {
       {tabsData.map((tab, index) => (
         <div
           key={index}
-          className={` ${index === activeTab ? "flex" : "hidden"}`}
+          className={`items-center bg-primary-100 px-10 py-12 rounded-6xl ${
+            index === activeTab ? "flex" : "hidden"
+          }`}
         >
-          <div>
-            <div>
-              <h1>{tab.tabContentTitle}</h1>
-              <p>{tab.tabContentParagraph}</p>
+          <div className="w-1/2">
+            <div className="max-w-[465px] mx-auto">
+              <h1 className="mb-4">{tab.tabContentTitle}</h1>
+              <p className="text-xl font-normal mb-12">
+                {tab.tabContentParagraph}
+              </p>
               <TabsButton buttonText="Discover product" />
             </div>
           </div>
           {tab.accordion && (
-            <div>
+            <div className="w-1/2">
               <Accordion items={tab.accordion} />
             </div>
           )}
