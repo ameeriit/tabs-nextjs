@@ -32,7 +32,7 @@ function TabsButton({
   return (
     <button className="relative z-10 inline-block rounded-bl-lg group font-base font-medium">
       <div
-        className={`relative bg-primary-200 px-6 rounded-bl-[inherit] py-4 rounded-tr-4xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 ${activeButtonBack}`}
+        className={`relative  px-6  rounded-bl-[inherit] py-4 rounded-tr-4xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:bg-primary-200 ${activeButtonBack}`}
       >
         <span className="flex items-center gap-3 ">
           {buttonText} <DownArrowIcon />

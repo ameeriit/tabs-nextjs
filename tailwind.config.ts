@@ -16,11 +16,13 @@ const config: Config = {
       md: "1.125rem", // 18px
       lg: "1.25rem", // 20px
       xl: "1.5rem", // 24px
-      "2xl": "2.5rem", // 40px
-      "3xl": "3rem", // 48px
+      "2xl": "2rem", // 32px
+      "3xl": "2.5rem", // 40px
+      "4xl": "3rem", // 48px
     },
     borderRadius: {
       lg: "8px",
+      xl: "16px",
       "4xl": "32px",
       "5xl": "36px",
       "6xl": "40px",

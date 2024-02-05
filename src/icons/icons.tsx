@@ -1,5 +1,19 @@
 import { SVGProps } from "react";
 
+export const PlusIcon = () => (
+  <svg
+    width="11"
+    height="11"
+    viewBox="0 0 11 11"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.94 6.46H6.68V10.78H4.98V6.46H0.74V4.92H4.98V0.579999H6.68V4.92H10.94V6.46Z"
+      fill="#3C479D"
+    />
+  </svg>
+);
 export const DownArrowIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -206,10 +220,12 @@ export const AccordionIconThree = () => (
   </svg>
 );
 
-interface AccordionDownIconProps extends SVGProps<SVGSVGElement> {
-}
+interface AccordionDownIconProps extends SVGProps<SVGSVGElement> {}
 
-export const AccordionDownIcon: React.FC<AccordionDownIconProps> = ({ className, ...rest }) => (
+export const AccordionDownIcon: React.FC<AccordionDownIconProps> = ({
+  className,
+  ...rest
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="13"

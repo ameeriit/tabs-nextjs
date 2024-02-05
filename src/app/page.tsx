@@ -13,7 +13,7 @@ import {
 
 const tabsData = [
   {
-    tabTitle: "Summer Adventure",
+    tabTitle: "Summer",
     tabContent: "Explore the beauty of nature and enjoy the warmth of the sun.",
     tabIcon: <TabCardIconOne />,
     tabContentTitle: "Travel Essentials",
