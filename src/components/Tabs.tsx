@@ -1,29 +1,8 @@
+import { TabsProps } from "@/types/common";
 import { useState } from "react";
 import Accordion from "./Accordion";
-import { TabsButton } from "./Buttons";
+import { Button } from "./Buttons";
 import Tab from "./Tab";
-
-interface TabProps {
-  tabTitle: string;
-  tabIcon: React.ReactNode;
-  tabContent: string;
-  onClick: () => void;
-  isActive: boolean;
-  index: number;
-  tabContentTitle: string;
-  tabContentParagraph: string;
-  accordion?: AccordionItem[];
-}
-
-interface AccordionItem {
-  accordionTitle: string;
-  accordionContent: string;
-  accordionIcon: React.ReactNode;
-}
-
-interface TabsProps {
-  tabsData: TabProps[];
-}
 
 const Tabs: React.FC<TabsProps> = ({ tabsData }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -62,7 +41,7 @@ const Tabs: React.FC<TabsProps> = ({ tabsData }) => {
               <p className="text-xl font-normal mb-12">
                 {tab.tabContentParagraph}
               </p>
-              <TabsButton buttonText="Discover product" />
+              <Button buttonText="Discover product" />
             </div>
           </div>
           {tab.accordion && (

@@ -28,23 +28,25 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           >
             <div className="flex gap-2">
               {accordionItem.accordionIcon}
-              <h5>{accordionItem.accordionTitle}</h5>
+              <div>
+                <h5>{accordionItem.accordionTitle}</h5>
+                <p
+                  className={`accordion-content transition-all duration-500 ease-in-out ${
+                    openIndex === accordionIndex
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0 overflow-hidden"
+                  }`}
+                >
+                  {accordionItem.accordionContent}
+                </p>
+              </div>
+              <AccordionDownIcon
+                className={`transform transition-transform duration-500 ${
+                  openIndex === accordionIndex ? "-rotate-180" : ""
+                }`}
+              />
             </div>
-            <AccordionDownIcon
-              className={`transform transition-transform duration-500 ${
-                openIndex === accordionIndex ? "-rotate-180" : ""
-              }`}
-            />
           </div>
-          <p
-            className={`accordion-content transition-all duration-500 ease-in-out ${
-              openIndex === accordionIndex
-                ? "max-h-screen opacity-100"
-                : "max-h-0 opacity-0 overflow-hidden"
-            }`}
-          >
-            {accordionItem.accordionContent}
-          </p>
         </li>
       ))}
     </ul>
