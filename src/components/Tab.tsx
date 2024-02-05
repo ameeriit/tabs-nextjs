@@ -1,4 +1,4 @@
-import { DownArrowIcon } from "@/icons/icons";
+import { TabsButton } from "./Buttons";
 
 interface TabProps {
   title: string;
@@ -6,7 +6,7 @@ interface TabProps {
   content: string;
   onClick: (index: number) => void;
   isActive: boolean;
-  index: number; // Add index prop if needed
+  tabIndex: number;
 }
 
 const Tab: React.FC<TabProps> = ({
@@ -15,12 +15,12 @@ const Tab: React.FC<TabProps> = ({
   content,
   onClick,
   isActive,
-  index,
+  tabIndex,
 }) => {
   return (
     <div
-      onClick={() => onClick(index)}
-      className={`flex-1 border-[1px] rounded-[8px] border-gray hover:bg-white pt-6 pr-5 transition-all ease-in-out duration-200 flex flex-col justify-between ${
+      onClick={() => onClick(tabIndex)}
+      className={`border-[1px] rounded-[8px] border-gray hover:bg-white pt-6 pr-5 transition-all ease-in-out duration-200 flex flex-col justify-between ${
         isActive ? "bg-white" : ""
       }`}
     >
@@ -32,22 +32,11 @@ const Tab: React.FC<TabProps> = ({
         <p className="mb-4">{content}</p>
       </div>
       <div>
-        <button className="relative z-10 inline-block rounded-bl-lg group font-base font-medium">
-          <div
-            className={`relative bg-primary-200 px-6 rounded-bl-[inherit] py-4 rounded-tr-4xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 ${
-              isActive ? "-translate-y-2" : ""
-            }`}
-          >
-            <span className="flex items-center gap-3 ">
-              Discover <DownArrowIcon />
-            </span>
-          </div>
-          <span
-            className={`absolute h-full left-0 bottom-0 bg-shadow rounded-bl-[inherit] -z-10 rounded-tr-5xl group-hover:w-[calc(100%+8px)] w-full transition-all duration-300 ease-in-out ${
-              isActive ? "w-[calc(100%+8px)]" : ""
-            }`}
-          />
-        </button>
+        <TabsButton
+          buttonText="Discover"
+          activeButton={isActive ? "w-[calc(100%+8px)]" : "w-full"}
+          activeButtonBack={isActive ? "-translate-y-2" : ""}
+        />
       </div>
     </div>
   );

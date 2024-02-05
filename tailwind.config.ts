@@ -11,13 +11,6 @@ const config: Config = {
     container: {
       padding: "20px",
     },
-    screens: {
-      mob: "540px",
-      sm: "720px",
-      md: "960px",
-      lg: "1140px",
-      xl: "1300px",
-    },
     fontSize: {
       base: "1rem", // 16px
       md: "1.125rem", // 18px
