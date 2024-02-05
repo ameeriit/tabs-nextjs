@@ -8,26 +8,42 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      padding: "20px",
+    },
+    screens: {
+      mob: "540px",
+      sm: "720px",
+      md: "960px",
+      lg: "1140px",
+      xl: "1300px",
+    },
     fontSize: {
       base: "1rem", // 16px
       md: "1.125rem", // 18px
       lg: "1.25rem", // 20px
       xl: "1.5rem", // 24px
-      "2xl": "2rem", // 32px
-      "3xl": "2.5rem", // 40px
-      "4xl": "3rem", // 48px
+      "2xl": "2.5rem", // 40px
+      "3xl": "3rem", // 48px
+    },
+    borderRadius: {
+      lg: "8px",
+      "4xl": "32px",
+      "5xl": "36px",
+      "6xl": "40px",
     },
     extend: {
       colors: {
         primary: {
-          50: "#FFE58C",
-          100: "#FFD540",
+          100: "#FFE58C",
+          200: "#FFD540",
         },
         secondary: "#F15A29",
         tertiary: "#EBECF5",
         shadow: "#3C479D",
         gray: "#CCCCCC",
         lightGray: "#f7f7f7f7",
+        black: "#000000",
       },
       fontFamily: {
         poppins: ["var(--font-poppins)", ...fontFamily.sans],
